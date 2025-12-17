@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacquelyn Edward | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              void: {
+                950: '#020617', // Deepest Slate (Night)
+                900: '#0f172a', // Slate 900
+                800: '#1e293b', // Slate 800
+                700: '#334155', // Slate 700
+              },
+              nebula: {
+                100: '#f8fafc', // Text Bright
+                300: '#cbd5e1', // Text Body
+                500: '#64748b', // Text Muted
+              },
+              brand: {
+                blue: '#0EA5E9',   // Sky Blue (Primary Tech)
+                orange: '#F97316', // Bright Orange (Highlight)
+                green: '#10B981',  // Emerald Green (Accent)
+                yellow: '#FACC15'  // Yellow (Aux)
+              }
+            },
+            backgroundImage: {
+              'cosmic-gradient': "radial-gradient(circle at top center, #1e293b 0%, #020617 70%)",
+              'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #0EA5E9 0deg, #F97316 180deg, #10B981 360deg)',
+              'text-gradient': 'linear-gradient(to right, #F97316, #0EA5E9)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'pulse-glow': 'pulseGlow 3s infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 10px rgba(249, 115, 22, 0.1)' },
+                '50%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.2)' }
+              },
+              float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #020617;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+        border: 1px solid #0f172a;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #F97316;
+    }
+
+    /* PRINT ONLY */
+    @media print {
+        @page { 
+            margin: 0.5in; 
+            size: auto; 
+        }
+        
+        html, body { 
+            background: #FFF !important; 
+            color: #000 !important; 
+            margin: 0 !important; 
+            padding: 0 !important; 
+            height: auto !important;
+            overflow: visible !important;
+            width: 100% !important;
+        }
+
+        /* Explicitly hide screen content */
+        #screen-content, nav, .fixed, button, iframe, canvas { 
+            display: none !important; 
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+        /* Force show the ATS Resume */
+        #ats-resume-container { 
+            display: block !important;
+            visibility: visible !important;
+            position: relative !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            background: white !important;
+            color: black !important;
+            overflow: visible !important;
+        }
+
+        /* Global print reset */
+        * { 
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important; 
+            box-shadow: none !important;
+            text-shadow: none !important;
+            color: black !important;
+            background: transparent !important;
+        }
+        
+        #ats-resume-container * {
+            color: inherit !important;
+        }
+    }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-void-950 text-nebula-300 antialiased font-sans selection:bg-brand-orange selection:text-white overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
