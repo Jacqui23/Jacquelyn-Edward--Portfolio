@@ -366,8 +366,10 @@ const initialResume: ResumeData = {
       company: "Capaciti",
       duration: "October 2025 - Present",
       points: [
-        "AI Bootcamp",
-        "My professional journey is centered on applying cutting-edge AI and full-stack development skills to create impactful, real-world solutions. From creating generative AI applications to data analysis dashboards, demonstrates a strong capability to translate complex technical concepts into tangible, user-centric products."
+        "Engaged in an intensive, project-based program focused on full-stack development, cloud technologies, and AI integration.",
+        "Collaborated in agile teams to design, develop, and deploy web applications, contributing to both front-end and back-end components.",
+        "Applied UX/UI principles to create intuitive user interfaces and leveraged generative AI APIs for innovative features.",
+        "Gained practical experience in modern software development workflows, including version control with Git, CI/CD, and cloud deployment."
       ]
     }
   ],
